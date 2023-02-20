@@ -4,7 +4,7 @@ import pydeck as pdk
 
 st.set_page_config(page_title="FA-FPO_Map", layout="wide")
 
-df_fresh=pd.read_excel('fa_fpo_gps.xlsx', sheet_name='Sheet1')
+df_fresh=pd.read_excel('/app/fa-fpo-mapping/fa_fpo_gps.xlsx', sheet_name='Sheet1')
 df = df_fresh[df_fresh['lat'].notnull()]
 df = df[df['FA Mobile'].notnull()]
 df['FA Mobile']=df['FA Mobile'].round(decimals=0)
@@ -12,7 +12,7 @@ df['FA Mobile']=df['FA Mobile'].round(decimals=0)
 df['FA Mobile']=df['FA Mobile'].astype(str)
 df = df[df['Cycle'].notnull()]
 
-df2=pd.read_excel('fa_fpo_gps.xlsx', sheet_name='Sheet2')
+df2=pd.read_excel('/app/fa-fpo-mapping/fa_fpo_gps.xlsx', sheet_name='Sheet2')
 df2 = df2[df2['FAPhoneNumber'].notnull()]
 
 df2['FAPhoneNumber']=df2['FAPhoneNumber'].astype(str)
